@@ -53,13 +53,13 @@ const BooksTable = ({ books }: Props) => {
                   <tr key={key}>
                     <td>
                       <BookInfoContainer>
-                        <Book width={"1rem"} height={"1rem"} />
+                        <Book width={"16px"} height={"16px"} />
                         {book.name}
                       </BookInfoContainer>
                     </td>
                     <td>
                       <BookInfoContainer>
-                        <Author width={"1rem"} height={"1rem"} />
+                        <Author width={"16px"} height={"16px"} />
                         {book.author?.fullName}
                       </BookInfoContainer>
                     </td>
