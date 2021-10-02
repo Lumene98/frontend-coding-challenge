@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { Book } from "../services/bookstore.service";
+import { Book as BookType } from "../services/bookstore.service";
+import Author from "./icons/Author";
+import Book from "./icons/Book";
 
 interface Props {
-  books?: Book[];
+  books?: BookType[];
 }
 
 const Container = styled.table`
@@ -24,6 +26,14 @@ const Container = styled.table`
   }
 `;
 
+const BookInfoContainer = styled.div`
+  display: flex;
+
+  & > svg {
+    margin-right: 0.5rem;
+  }
+`;
+
 const BooksTable = ({ books }: Props) => {
   return (
     <Container>
@@ -41,8 +51,18 @@ const BooksTable = ({ books }: Props) => {
               (book, key) =>
                 book && (
                   <tr key={key}>
-                    <td>{book.name}</td>
-                    <td>{book.author?.fullName}</td>
+                    <td>
+                      <BookInfoContainer>
+                        <Book width={"1rem"} height={"1rem"} />
+                        {book.name}
+                      </BookInfoContainer>
+                    </td>
+                    <td>
+                      <BookInfoContainer>
+                        <Author width={"1rem"} height={"1rem"} />
+                        {book.author?.fullName}
+                      </BookInfoContainer>
+                    </td>
                   </tr>
                 )
             )
