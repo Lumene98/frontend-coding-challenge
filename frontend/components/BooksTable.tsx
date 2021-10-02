@@ -39,7 +39,7 @@ const BooksTable = ({ books }: Props) => {
     <Container>
       <thead>
         <tr>
-          <th>Books</th>
+          <th>Best-selling books</th>
         </tr>
       </thead>
       <tbody>

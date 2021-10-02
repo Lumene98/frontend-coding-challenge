@@ -5,6 +5,7 @@ const BookstoreImage = styled.div<{ url: string }>`
   background-image: url(${({ url }) => url});
   background-size: cover;
   height: auto;
+  min-height: 150px;
   min-width: 20%;
   flex: 1;
 
