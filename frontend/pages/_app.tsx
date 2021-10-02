@@ -1,6 +1,6 @@
-import React from 'react';
-import type { AppProps } from 'next/app';
-import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import React from "react";
+import type { AppProps } from "next/app";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 html,
@@ -9,6 +9,7 @@ body{
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #f5e5d5;
 }
 
 a {
@@ -23,7 +24,7 @@ a {
 
 const theme = {
   colors: {
-    primary: '#fafafa',
+    primary: "#fafafa",
   },
 };
 
