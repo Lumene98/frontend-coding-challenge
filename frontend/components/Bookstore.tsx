@@ -93,7 +93,7 @@ const Bookstore = ({ store, delay }: Props) => (
       <TitleAndBooksContainer>
         <NameContainer>
           <NamePlaceholder>{store.name}</NamePlaceholder>
-          <BookstoreRating width={`${store.rating * 20}%`} />
+          <BookstoreRating rating={store.rating} />
         </NameContainer>
         <BooksTable books={store.books} />
       </TitleAndBooksContainer>
