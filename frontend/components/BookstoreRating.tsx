@@ -9,38 +9,33 @@ const BookstoreRatingContainer = styled.div`
 `;
 
 const BookstoreRatingSpan = styled.span<{ rating?: number }>`
-  color: ${({ rating }) => (rating && rating != 5 ? "#ead2ac" : "#fff")};
-  background-color: ${({ rating }) =>
-    rating && rating != 5 ? "#f5e5d5" : "#ead2ac"};
-  ${({ rating }) =>
-    rating && rating != 5
-      ? "box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);"
-      : ""}
-  padding: 0.3rem;
-  border-radius: 30px;
-  font-weight: bold;
+  color: #000;
+  margin: 0 0.5rem;
+  padding: 3px 6px;
+  color: #fff;
+  background: #353945;
+  border-radius: 100px;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  display: inline-block;
 `;
 
-const BookstoreRatingBar = styled.div`
+const BookstoreRatingBar = styled.div<{ filled: boolean; delay: string }>`
   flex: 1;
   height: 11px;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
-`;
-const BookstoreRatingBarFill = styled.div<{ width: string }>`
-  display: block;
-  height: 11px;
-  background-color: #ead2ac;
-  border-radius: 3px;
-  max-width: ${({ width }) => width};
-  width: 0;
-  animation: fill 3s 2s forwards;
+  background-color: ${({ filled }) => (filled ? "#ead2ac" : "")};
+  margin-right: 0.2rem;
+  opacity: 0;
+  animation: fill 3s ${({ delay }) => delay} forwards;
 
   @keyframes fill {
     0% {
-      width: 0;
+      opacity: 0;
     }
     100% {
-      width: 100%;
+      opacity: 1;
     }
   }
 `;
@@ -53,12 +48,14 @@ const BookstoreRating = ({ rating }: Props) => {
   return (
     <BookstoreRatingContainer>
       <BookstoreRatingSpan>1</BookstoreRatingSpan>
-      <BookstoreRatingBar>
-        <BookstoreRatingBarFill
-          width={`${rating * 20}%`}
-        ></BookstoreRatingBarFill>
-      </BookstoreRatingBar>
-      <BookstoreRatingSpan rating={rating}>5</BookstoreRatingSpan>
+      {Array.from(Array(5), (e, key) => (
+        <BookstoreRatingBar
+          key={key}
+          filled={key < rating}
+          delay={`${1 + Number(key) / 2}s`}
+        />
+      ))}
+      <BookstoreRatingSpan>5</BookstoreRatingSpan>
     </BookstoreRatingContainer>
   );
 };

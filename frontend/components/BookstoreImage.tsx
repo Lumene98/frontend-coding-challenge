@@ -10,9 +10,10 @@ const BookstoreImage = styled.div<{ url: string }>`
   flex: 1;
 
   @media (max-width: 700px) {
-    flex: 0;
+    flex: 0 0 50%;
     height: 100px;
     width: 20%;
+    margin-bottom: 1rem;
   }
 `;
 

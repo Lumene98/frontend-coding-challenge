@@ -35,6 +35,7 @@ const Infos = styled.div`
 
   @media (max-width: 700px) {
     flex-wrap: wrap;
+    justify-content: center;
   }
 `;
 
