@@ -12,7 +12,7 @@ yarn start
 
 ### Frontend
 
-**DO NOT FORGET ENV.LOCAL(GIST IS IN THE EMAIL)**
+**DO NOT FORGET .ENV.LOCAL(GIST IS IN THE EMAIL)**
 
 ```
 cd frontend/
